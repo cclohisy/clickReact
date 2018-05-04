@@ -1,29 +1,31 @@
 import React, { Component } from 'react';
 import GameTile from "./GameTile.js"
-import cards from "../cards.json";
+// import cards from "../cards.json";
 
-class TileContainer extends Component {
+// class TileContainer extends Component{
 
-    state = {
-        cards
-    }
+// state = {
+//     cards
+// }
+const TileContainer = props => (
+    // render() {
+    //     return (
+    <div className="container">
+        <div className="row">
+            {props.cards.map(card =>
+                <GameTile
+                    handleClick={props.handleClick}
+                    image={card.image}
+                    id={card.id}
+                    name={card.name}
+                    clicked = {card.clicked}
+                />
+            )}
+        </div>
+    </div>
 
-    render() {
-        return (
-            <div className="container">
-                <div className="row">
-                    {this.state.cards.map(card => 
-                        <GameTile
-                            image={card.image}
-                            id={card.id}
-                            name={card.name}
-                        />
-                    )}
-                </div>
-            </div>
-
-        )
-    }
-}
+    //)}
+)
+//}
 
 export default TileContainer
