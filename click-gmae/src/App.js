@@ -5,13 +5,32 @@ import HeaderClicks from "./components/HeaderClicks";
 import './App.css';
 
 class App extends Component {
+
+  state = {
+    score: 0
+  }
+
+  incrementScore = () => {
+    this.setState({
+      count: this.state.score + 1
+    })
+  }
+
+
+
+
   render() {
     return (
       <div className="App">
-          <HeaderClicks/>
-          <TileContainer/>
+        <HeaderClicks
+          score={this.state.score}
+        />
+
+        <TileContainer
+          incrementScore={this.incrementScore}
+        />
       </div>
-      
+
     );
   }
 }

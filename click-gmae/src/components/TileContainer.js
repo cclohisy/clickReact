@@ -8,18 +8,17 @@ class TileContainer extends Component {
         cards
     }
 
-
     render() {
         return (
             <div className="container">
                 <div className="row">
-                    {this.state.cards.map(card => {
+                    {this.state.cards.map(card => 
                         <GameTile
                             image={card.image}
                             id={card.id}
                             name={card.name}
                         />
-                    })}
+                    )}
                 </div>
             </div>
 

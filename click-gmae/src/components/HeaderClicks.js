@@ -3,8 +3,11 @@ import React from "react"
 const HeaderClicks = props => {
     return (
         <div>
-            {/* <img src={logo} className="App-logo" alt="logo" /> */}
-            <h1 className="App-title">Click around</h1>
+            <nav className="navbar text-center text-white navbar-dark bg-dark">
+                <h4>Click around</h4>
+                <h5>Some kinda message that changes</h5>
+                <h4>Current Score: {props.score} </h4>
+            </nav>
         </div>
     )
 }
