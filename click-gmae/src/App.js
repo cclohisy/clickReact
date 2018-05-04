@@ -14,13 +14,22 @@ class App extends Component {
   }
 
   incrementScore = () => {
-    this.setState({
-      score: this.state.score + 1
-    })
+    if (this.state.score < 12) {
+      this.setState({
+        score: this.state.score + 1
+      })
+    }
+    else {
+
+      alert("bad job you lost")
+      this.setState({
+        score: 0
+      })
+    }
   }
 
   shuffleCards = () => {
-    cards.sort(function (a, b) { return b - a })
+    cards.sort(function (a, b) { return 0.5 - Math.random() })
     this.setState({
       cards: this.state.cards
     })
@@ -30,15 +39,13 @@ class App extends Component {
   beenClicked = (id) => {
     if (this.state.cards.id === id) {
       this.setState({
-
-
       })
     }
   }
   handleClick = (id) => {
     this.incrementScore();
     this.shuffleCards()
-    this.shuffleCards(id)
+    this.beenClicked(id)
   }
 
 
