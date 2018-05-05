@@ -18,6 +18,7 @@ const TileContainer = props => (
                     image={card.image}
                     id={card.id}
                     name={card.name}
+                    key = {card.id}
                     // clicked = {card.clicked}
                 />
             )}

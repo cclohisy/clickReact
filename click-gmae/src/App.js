@@ -10,19 +10,20 @@ class App extends Component {
 
   state = {
     cards,
-    score: 0
+    score: 0,
+    message: "Start Clicking"
   }
 
   incrementScore = () => {
     if (this.state.score < 12) {
       this.setState({
-        score: this.state.score + 1
+        score: this.state.score + 1,
+        message:"KEEP CLICKING"
       })
     }
-    else {
-
-      alert("bad job you lost")
+    else if (this.state.score = 12) {
       this.setState({
+        message: "Wow you must have a great memory... YOU WON good job!",
         score: 0
       })
     }
@@ -35,11 +36,17 @@ class App extends Component {
     })
   }
 
+  
+
   //set indv. card  clicked cool to true/false
   beenClicked = (id) => {
     if (this.state.cards.id === id) {
-      this.setState({
-      })
+      this.state.cards.clicked = false
+      alert("changed to false")
+      // let clicked = this.state.cards[id].clicked
+      // this.setState({
+      //   clicked: false
+      // })
     }
   }
   handleClick = (id) => {
@@ -56,6 +63,7 @@ class App extends Component {
       <div className="App">
         <HeaderClicks
           score={this.state.score}
+          message={this.state.message}
         />
 
         <TileContainer
